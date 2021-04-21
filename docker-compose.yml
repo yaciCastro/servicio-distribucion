@@ -1,0 +1,17 @@
+version: "3"
+services:
+
+  usuarios-db-docker:
+    image: postgres:latest
+    ports:
+      - 5555:5432
+    environment:
+      POSTGRES_USER: tmp
+      POSTGRES_PASSWORD: tmppass
+      POSTGRES_DB: usuarios-db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgr:/var/lib/postgresql/data/pgdata
+
+volumes:
+  postgr:
